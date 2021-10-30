@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-const url = 'https://api.github.com/users/QuincyLarsons'
+const url = 'https://api.github.com/users/QuincyLarson'
 const MultipleReturns = () => {
   const [isloading, setIsLoading] = useState(true)
   const [isError, setIsError] = useState(false)
@@ -13,6 +13,7 @@ const MultipleReturns = () => {
         }else {
           setIsLoading(false)
           setIsError(true)
+          throw new Error(resp.statusText)
         }
       })
       .then((user)=> {
