@@ -1,4 +1,9 @@
 import React, { useState } from 'react';
+/* use
+component name must be uppercase
+must be int the function / component body
+cannot call conditionnally */
+
 
 const UseStateBasics = () => {
 /*   console.log(useState('hello world'))
@@ -13,7 +18,6 @@ const UseStateBasics = () => {
     } else {
       setText('random title')
     }
-    
   }
 
   return (
