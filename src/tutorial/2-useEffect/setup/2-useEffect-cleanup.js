@@ -16,8 +16,7 @@ const UseEffectCleanup = () => {
     return () => {  /* //! CLEANUP FUNCTION */
       window.removeEventListener('resize', checkSize)
     }
-    
-  })
+  },[])
   return (
     <>
     <h1>window</h1>
