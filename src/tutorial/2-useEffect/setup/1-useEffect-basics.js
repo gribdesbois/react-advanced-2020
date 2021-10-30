@@ -9,11 +9,13 @@ const UseEffectBasics = () => {
     console.log('call useEffect')
     if (value >= 1) {
       document.title= `New Messages(${value})`
-    }
-    
-     
-    },[value]) /*  //! RUns on initial render only */
-    console.log('render component')
+    } 
+  },[value]) /*  //! Runs every time value changes */
+
+  useEffect(() => {
+    console.log('hello world')
+  }, [])
+  console.log('render component')
   return <>
   <h1>{value}</h1>
   <button className='btn' onClick={() => setValue(value + 1)}> 
