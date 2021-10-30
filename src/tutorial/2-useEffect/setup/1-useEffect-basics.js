@@ -12,7 +12,7 @@ const UseEffectBasics = () => {
     }
     
      
-    },[])
+    },[value]) /*  //! RUns on initial render only */
     console.log('render component')
   return <>
   <h1>{value}</h1>
