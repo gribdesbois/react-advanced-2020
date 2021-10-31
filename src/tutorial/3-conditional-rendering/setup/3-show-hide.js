@@ -11,10 +11,20 @@ const ShowHide = () => {
 }
 
 const Item = () => {
+  const [size, setSize] = useState(window.innerWidth)
+  const checkSize = () => {
+    setSize(window.innerWidth)
+  }
+  useEffect(() => {
+    window.addEventListener('resize', checkSize)
+    /* return () => {
+      cleanup
+    } */
+  }, [])
   return (
     <div style={{marginTop: '2rem'}}>
       <h1>window</h1>
-      <h2>size : </h2>
+      <h2>size : {size} </h2>
     </div>
 
   )
