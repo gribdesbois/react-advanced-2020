@@ -16,15 +16,15 @@ const Item = () => {
     setSize(window.innerWidth)
   }
   useEffect(() => {
-    window.addEventListener('resize', checkSize)
-    /* return () => {
-      cleanup
-    } */
+    window.addEventListener('resize', checkSize) /* //! REMEMBER TO CLEANUP LISTENER */
+     return () => {
+      window.removeEventListener('resize', checkSize)
+    }
   }, [])
   return (
     <div style={{marginTop: '2rem'}}>
       <h1>window</h1>
-      <h2>size : {size} </h2>
+      <h2>size : {size}  px</h2>
     </div>
 
   )
