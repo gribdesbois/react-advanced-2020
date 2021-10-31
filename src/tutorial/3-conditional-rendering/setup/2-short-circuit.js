@@ -14,7 +14,7 @@ const ShortCircuit = () => {
     <h1>value: {secondValue}</h1> */}
     {/* {if () {console.log('hello world')}}   //! FAILS TO COMPILE */}
     <h1>{text || 'john doe'}</h1>
-    {text && <h1>hello world</h1>}
+    {!text && <h1>hello world</h1>}
   </>
 }
 
