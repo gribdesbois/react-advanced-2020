@@ -1,6 +1,6 @@
-import React from 'react';
-import { Fragment } from 'react';
-import { data } from '../../../data';
+import React from 'react'
+import { Fragment } from 'react'
+import { data } from '../../../data'
 
 const UseStateArray = () => {
   const [ people, setPeople ] = React.useState(data)
@@ -27,6 +27,6 @@ const UseStateArray = () => {
     </button>
     </>
   )
-};
+}
 
-export default UseStateArray;
+export default UseStateArray

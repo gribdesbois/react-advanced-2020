@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 /* use
 component name must be uppercase
 must be int the function / component body
@@ -27,6 +27,6 @@ const UseStateBasics = () => {
       Change Title
       </button>
     </React.Fragment>)
-};
+}
 
-export default UseStateBasics;
+export default UseStateBasics

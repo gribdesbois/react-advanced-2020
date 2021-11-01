@@ -16,8 +16,8 @@ const Item = () => {
     setSize(window.innerWidth)
   }
   useEffect(() => {
-    window.addEventListener('resize', checkSize) /* //! REMEMBER TO CLEANUP LISTENER */
-     return () => {
+    window.addEventListener('resize', checkSize) 
+     return () => {/* //! REMEMBER TO CLEANUP LISTENER */
       window.removeEventListener('resize', checkSize)
     }
   }, [])
