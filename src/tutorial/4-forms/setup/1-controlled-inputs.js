@@ -13,7 +13,11 @@ const ControlledInputs = () => {
   const handleSubmit = ($event) => {
     $event.preventDefault()
     if (firstName && email) { /* //! '' being falsy */
-      const person= {firstName, email}
+      const person= {
+        id: new Date().getTime().toString(),
+        firstName,
+        email
+      }
       setPeople( (people) => {
         return[...people, person]
       })
@@ -48,6 +52,15 @@ const ControlledInputs = () => {
       </div>
       <button type='submit' onClick={handleSubmit}>add person</button>
     </form>
+    {
+      people.map(person => {/* LIST ELEMENTS NEED ID FOR STATE MANAGEMENT */
+        const {id, firstName, email} = person
+        return <div key={id}>
+          <h4>{firstName}</h4>
+          <p>{email}</p>
+        </div>
+      })
+    }
   </article>
   </>
 }
