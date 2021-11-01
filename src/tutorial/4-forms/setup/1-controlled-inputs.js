@@ -8,9 +8,20 @@ import React, { useState } from 'react'
 const ControlledInputs = () => {
   const [firstName, setFirstName] = useState('')
   const [email, setEmail] = useState('')
+  const [people, setPeople] = useState([])
+
   const handleSubmit = ($event) => {
     $event.preventDefault()
-    console.log('hello world')
+    if (firstName && email) { /* //! '' being falsy */
+      const person= {firstName, email}
+      setPeople( (people) => {
+        return[...people, person]
+      })
+      setFirstName('')
+      setEmail('')
+    }else {
+      console.log('empty values')
+    }
   }
   return <>
   <article>
