@@ -55,7 +55,7 @@ const ControlledInputs = () => {
     {
       people.map(person => {/* LIST ELEMENTS NEED ID FOR STATE MANAGEMENT */
         const {id, firstName, email} = person
-        return <div key={id}>
+        return <div className='item' key={id}>
           <h4>{firstName}</h4>
           <p>{email}</p>
         </div>
