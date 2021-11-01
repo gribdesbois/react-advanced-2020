@@ -1,44 +1,38 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 // JS
-// const input = document.getElementById('myText');
+// const input = document.getElementById('myText')
 // const inputValue = input.value
 // React
 // value, onChange
 // dynamic object keys
 
 const ControlledInputs = () => {
-  const [firstName, setFirstName] = useState('');
-  const [email, setEmail] = useState('');
-  const [people, setPeople] = useState([]);
-  const [person, setperson] = useState({firstName:'', email:'', id:'', age:''})
+  const [firstName, setFirstName] = useState('')
+  const [email, setEmail] = useState('')
+  const [people, setPeople] = useState([])
+  const [person, setPerson] = useState({firstName:'', email:'', age:''})
   const [age, setAge] = useState('')
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (firstName && email) {
-      const person = { id: new Date().getTime().toString(), firstName, email };
-      console.log(person);
-      setPeople((people) => {
-        return [...people, person];
-      });
-      setFirstName('');
-      setEmail('');
-    } else {
-      console.log('empty values');
-    }
-  };
+  const handleChange = ($event) => {
+    const name = $event.target.name
+    const value = $event.target.value
+    setPerson({...person, [name]: value})/* //! DYNAMIC OBJECT KEYS */
+  }
+  const handleSubmit = ($event) => {
+    $event.preventDefault()
+  }
   return (
     <>
       <article>
-        <form className='form' onSubmit={handleSubmit}>
+        <form className='form'>
           <div className='form-control'>
             <label htmlFor='firstName'>Name : </label>
             <input
               type='text'
               id='firstName'
               name='firstName'
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
+              value={person.firstName}
+              onChange={handleChange}
             />
           </div>
           <div className='form-control'>
@@ -47,8 +41,8 @@ const ControlledInputs = () => {
               type='text'
               id='email'
               name='email'
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              value={person.email}
+              onChange={handleChange}
             />
           </div>
           <div className='form-control'>
@@ -57,24 +51,24 @@ const ControlledInputs = () => {
               type='text'
               id='age'
               name='age'
-              value={age}
-              onChange={(e) => setAge(e.target.value)}
+              value={person.age}
+              onChange={handleChange}
             />
           </div>
-          <button type='submit'>add person</button>
+          <button type='submit' onClick={handleSubmit}>add person</button>
         </form>
         {people.map((person, index) => {
-          const { id, firstName, email } = person;
+          const { id, firstName, email } = person
           return (
             <div className='item' key={id}>
               <h4>{firstName}</h4>
               <p>{email}</p>
             </div>
-          );
+          )
         })}
       </article>
     </>
-  );
-};
+  )
+}
 
-export default ControlledInputs;
+export default ControlledInputs
