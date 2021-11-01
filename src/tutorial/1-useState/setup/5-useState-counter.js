@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
 const UseStateCounter = () => {
   const [value, setValue] = useState(0)
@@ -34,6 +34,6 @@ const UseStateCounter = () => {
     </section>
     </>
     )
-};
+}
 
-export default UseStateCounter;
+export default UseStateCounter

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
 const UseStateObject = () => {
   const [person, setPerson] = useState({name:'peter', age:24, message:'random message'})
@@ -20,6 +20,6 @@ const UseStateObject = () => {
     </button>
     </>
   )
-};
+}
 
-export default UseStateObject;
+export default UseStateObject
