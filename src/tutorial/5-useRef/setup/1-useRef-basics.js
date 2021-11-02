@@ -16,6 +16,7 @@ const UseRefBasics = () => {
   }
   useEffect(() => {
     console.log(refContainer.current) 
+  refContainer.current.focus()  
   })
   return (
     <>
