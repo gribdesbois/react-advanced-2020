@@ -12,7 +12,9 @@ const Index = () => {
     $event.preventDefault()
     if (name) {
       setShowModal(true)
-      setPeople([...people, {id:new Date().getTime().toString(), name}])
+      setPeople([
+        ...people,
+        {id:new Date().getTime().toString(), name}])
       setName('')
     }else {
       setShowModal(true)
