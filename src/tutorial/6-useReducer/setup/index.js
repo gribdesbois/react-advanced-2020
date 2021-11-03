@@ -3,10 +3,11 @@ import Modal from './Modal'
 import { data } from '../../../data'
 // reducer function
 const reducer = (state, action) => {
+  console.log(state)
   if(action.type === 'TESTING'){
     return {...state, people: data, isModalOpen:true, modalContent: 'item added'}
   }
-  return state
+  throw new Error('no matching action type')
 }
 const defaultState = {
   people: [],
@@ -22,7 +23,7 @@ const Index = () => {
     if (name) {
       dispatch({type: 'TESTING'}) /* NAMES DO MATTER IN THIS CASE */
     }else {
-
+      dispatch({type: 'RANDOM'})
     }
   }
   return(
