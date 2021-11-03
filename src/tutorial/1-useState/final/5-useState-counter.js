@@ -1,20 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
 const UseStateCounter = () => {
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState(0)
 
   const reset = () => {
-    setValue(0);
-  };
+    setValue(0)
+  }
 
   const complexIncrease = () => {
     setTimeout(() => {
-      // setValue(value + 1);
+      // setValue(value + 1)
       setValue((prevState) => {
-        return prevState + 1;
-      });
-    }, 2000);
-  };
+        return prevState + 1
+      })
+    }, 2000)
+  }
 
   return (
     <>
@@ -39,7 +39,7 @@ const UseStateCounter = () => {
         </button>
       </section>
     </>
-  );
-};
+  )
+}
 
-export default UseStateCounter;
+export default UseStateCounter

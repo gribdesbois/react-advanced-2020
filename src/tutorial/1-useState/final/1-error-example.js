@@ -1,12 +1,12 @@
-import React from 'react';
+import React from 'react'
 
 const ErrorExample = () => {
-  let title = 'random title';
+  let title = 'random title'
 
   const handleClick = () => {
-    title = 'hello people';
-    console.log(title);
-  };
+    title = 'hello people'
+    console.log(title)
+  }
   return (
     <React.Fragment>
       <h2>{title}</h2>
@@ -14,7 +14,7 @@ const ErrorExample = () => {
         change title
       </button>
     </React.Fragment>
-  );
-};
+  )
+}
 
-export default ErrorExample;
+export default ErrorExample
