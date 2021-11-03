@@ -4,8 +4,14 @@ import { data } from '../../../data'
 // reducer function
 const reducer = (state, action) => {
   console.log(state)
-  if(action.type === 'TESTING'){
-    return {...state, people: data, isModalOpen:true, modalContent: 'item added'}
+  if(action.type === 'ADD_ITEM'){
+    const newItems= [...state.people, action.payload]
+    return {
+      ...state,
+      people: newItems,
+      isModalOpen:true,
+      modalContent: 'item added'
+    }
   }
   throw new Error('no matching action type')
 }
@@ -21,7 +27,8 @@ const Index = () => {
   const handleSubmit = ($event) => {
     $event.preventDefault()
     if (name) {
-      dispatch({type: 'TESTING'}) /* NAMES DO MATTER IN THIS CASE */
+      const newItem = {id: new Date().getTime().toString(), name}
+      dispatch({type: 'ADD_ITEM', payload: newItem}) /* NAMES DO MATTER IN THIS CASE */
     }else {
       dispatch({type: 'RANDOM'})
     }
